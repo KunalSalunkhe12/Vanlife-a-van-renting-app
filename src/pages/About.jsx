@@ -2,7 +2,7 @@ import aboutImage from "../assets/about-image.jpg";
 
 const About = () => {
   return (
-    <div className="bg-background">
+    <div className="bg-primary">
       <img src={aboutImage} className="h-96 w-full object-cover" alt="" />
       <div className="md:w-1/2 mx-auto px-4 py-8 md:py-16 flex flex-col items-center gap-8 md:gap-16">
         <h2 className="text-xl md:text-4xl font-bold">
@@ -15,7 +15,7 @@ const About = () => {
           team is full of vanlife enthusiasts who know firsthand the magic of
           touring the world on 4 wheels.
         </p>
-        <div className="bg-[#FFCC8D] w-full p-6 md:p-10 rounded-md">
+        <div className="bg-secondary w-full p-6 md:p-10 rounded-md">
           <h3 className="text-lg md:text-3xl font-bold">
             Your destination is waiting. Your van is ready.
           </h3>
