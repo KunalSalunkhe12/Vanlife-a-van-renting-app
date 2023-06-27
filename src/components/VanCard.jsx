@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const VanCard = ({ van }) => {
   return (
-    <Link to={`/vans/${van?.id}`}>
+    <Link to={`${van?.id}`}>
       <div className="font-medium">
         <img className="rounded-md" src={van?.imageUrl} alt="Image of van" />
         <div className="flex justify-between my-4">

@@ -5,17 +5,16 @@ const VanDetail = () => {
   const { id } = useParams();
   const [vanDetails, setVanDetails] = useState(null);
 
-  const getVanDetails = async () => {
-    try {
-      const response = await fetch(`/api/vans/${id}`);
-      const json = await response.json();
-      setVanDetails(json.vans);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   useEffect(() => {
+    const getVanDetails = async () => {
+      try {
+        const response = await fetch(`/api/vans/${id}`);
+        const json = await response.json();
+        setVanDetails(json.vans);
+      } catch (error) {
+        console.log(error);
+      }
+    };
     getVanDetails();
   }, [id]);
 
@@ -49,7 +48,7 @@ const VanDetail = () => {
           </div>
         </div>
       ) : (
-        <p>Loading...</p>
+        <p className="text-center py-10 min-h-screen">Loading...</p>
       )}
     </div>
   );

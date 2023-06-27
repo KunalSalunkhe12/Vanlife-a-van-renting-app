@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import VanCard from "../components/VanCard";
+import VanCard from "../../components/VanCard";
 
 const Vans = () => {
   const [vans, setVans] = useState(null);
@@ -38,7 +38,7 @@ const Vans = () => {
           {vans ? (
             vans.map((van) => <VanCard key={van.id} van={van} />)
           ) : (
-            <h1>Loading...</h1>
+            <h1 className="min-h-screen">Loading...</h1>
           )}
         </div>
       </div>

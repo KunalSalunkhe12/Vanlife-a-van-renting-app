@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import IntroPage from "../assets/intro-page.jpg";
 
 const Home = () => {
@@ -16,7 +17,7 @@ const Home = () => {
             the perfect van to make your perfect road trip.
           </h2>
           <button className="bg-orange text-white font-medium p-2 md:text-lg rounded-sm">
-            Find your van
+            <Link to="/vans">Find your van</Link>
           </button>
         </div>
       </div>
