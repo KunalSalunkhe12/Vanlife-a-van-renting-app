@@ -22,8 +22,8 @@ const VanDetail = () => {
     <div className="bg-primary px-4 py-10 md:py-16">
       {vanDetails ? (
         <div className="w-full sm:w-1/2 md:w-1/3 mx-auto p-4">
-          <Link to="/vans">
-            <p className="">← back to all vans</p>
+          <Link to=".." relative="path">
+            <p className="">← Back to all vans</p>
           </Link>
 
           <img

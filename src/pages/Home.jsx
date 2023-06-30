@@ -16,9 +16,11 @@ const Home = () => {
             Add adventure to your life by joining the #vanlife movement. Rent
             the perfect van to make your perfect road trip.
           </h2>
-          <button className="bg-orange text-white font-medium p-2 md:text-lg rounded-sm">
-            <Link to="/vans">Find your van</Link>
-          </button>
+          <Link to="/vans">
+            <button className="bg-orange w-full text-white font-medium p-2 md:text-lg rounded-sm">
+              Find your van
+            </button>
+          </Link>
         </div>
       </div>
     </main>
