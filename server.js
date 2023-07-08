@@ -18,6 +18,7 @@ createServer({
         this.namespace = "api"
 
         this.get("/vans", (schema) => {
+            // return new Response(400, {}, { error: "Failed to fetch vans" })
             return schema.vans.all()
         })
 

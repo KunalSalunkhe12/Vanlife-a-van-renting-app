@@ -13,3 +13,11 @@
 -searchParams - used for sorting, filtering, sharing same ui between other users
 -useSearchParams hook - return searchParams which is URLSearchParams obj which has all the params && setSearchParams which we can use to append or set new params
 -setSearchParams - takes an object which has key value pairs which are then converted into searchParams under the hood it uses URLSearchParams constructor
+-Link state can be used to preserve params between routes
+-useLocation returns a obj which has current pathname, search-(params), state-(prev route state), key
+-catchAll routes - if we want to render a component for all the routes which are not defined we use `path="*"` which is a catch all route
+-useRouteError
+-loader
+-Protected Routes - if we want to protect a route we can use a Wrapper component which will check if the user is logged in or not and then render the component
+-Navigate - used to navigate to a route programmatically/forcefully (can be used in protected routes)
+-redirect() - used to redirect to a route programmatically/forcefully inside a loader

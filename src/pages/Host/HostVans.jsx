@@ -1,21 +1,11 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
+import { getHostVans } from "../../api";
 
+export const loader = () => {
+  return getHostVans();
+};
 const HostVans = () => {
-  const [hostVans, setHostVans] = useState(null);
-
-  useEffect(() => {
-    const getHostVans = async () => {
-      try {
-        const response = await fetch("/api/host/vans");
-        const json = await response.json();
-        setHostVans(json.vans);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    getHostVans();
-  }, []);
+  const hostVans = useLoaderData();
 
   const hostVansEls =
     hostVans &&
@@ -41,7 +31,7 @@ const HostVans = () => {
         <h1 className="text-base md:text-lg font-medium my-6">
           Your listed vans
         </h1>
-        {hostVans ? <section>{hostVansEls}</section> : <h2>Loading...</h2>}
+        <section>{hostVansEls}</section>
       </div>
     </section>
   );

@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 
-const VanCard = ({ van }) => {
+const VanCard = ({ van, searchParams, typeFilter }) => {
   return (
-    <Link to={`${van?.id}`}>
+    <Link
+      to={`${van?.id}`}
+      state={{ search: searchParams.toString(), type: typeFilter }}
+    >
       <div className="font-medium">
         <img className="rounded-md" src={van?.imageUrl} alt="Image of van" />
         <div className="flex justify-between my-4">

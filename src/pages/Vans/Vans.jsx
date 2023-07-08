@@ -1,26 +1,15 @@
-import { useState, useEffect } from "react";
+import { getVans } from "../../api";
 import VanCard from "../../components/VanCard";
-import { useSearchParams } from "react-router-dom";
+import { useLoaderData, useSearchParams } from "react-router-dom";
+
+export const loader = () => {
+  return getVans();
+};
 
 const Vans = () => {
-  const [vans, setVans] = useState([]);
+  const vans = useLoaderData();
   const [searchParams, setSearchParams] = useSearchParams();
-
   const typeFilter = searchParams.get("type");
-
-  const getAllVans = async () => {
-    try {
-      const response = await fetch("/api/vans");
-      const json = await response.json();
-      setVans(json.vans);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    getAllVans();
-  }, []);
 
   const displayedVans = typeFilter
     ? vans.filter((van) => van.type === typeFilter)
@@ -71,14 +60,17 @@ const Vans = () => {
           )}
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-14">
-          {vans.length > 0 ? (
-            displayedVans.length > 0 ? (
-              displayedVans.map((van) => <VanCard key={van.id} van={van} />)
-            ) : (
-              <p className="text-lg font-medium">No vans to show</p>
-            )
+          {displayedVans.length > 0 ? (
+            displayedVans.map((van) => (
+              <VanCard
+                key={van.id}
+                van={van}
+                searchParams={searchParams}
+                typeFilter={typeFilter}
+              />
+            ))
           ) : (
-            <p className="min-h-screen">Loading...</p>
+            <p className="text-lg font-medium">No vans to show</p>
           )}
         </div>
       </div>
