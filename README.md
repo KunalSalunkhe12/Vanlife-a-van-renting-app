@@ -21,3 +21,11 @@
 -Protected Routes - if we want to protect a route we can use a Wrapper component which will check if the user is logged in or not and then render the component
 -Navigate - used to navigate to a route programmatically/forcefully (can be used in protected routes)
 -redirect() - used to redirect to a route programmatically/forcefully inside a loader
+-useNavigate() - returns navigate fn which can be used to navigate to a route programmatically/forcefully
+-we can use `replace` prop in navigate to replace the current route in the history stack for
+-we can also pass search params in redirect fn for eg: `redirect("/login?message=Please Login")`
+-Form component from react-router-dom is like normal javascript form where we do not need to manage the state of the form
+-action function - called when the form is submitted
+-we can add replace prop in form to replace the current route in the history stack
+-useActionData - use to get the data returned from the action function
+-useNavigation - used to get the navigation state, and other properties
