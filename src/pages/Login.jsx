@@ -32,12 +32,16 @@ const Login = () => {
           name="email"
           type="email"
           placeholder="Email address"
+          value="fake@email.com"
+          readOnly
         />
         <input
           className="p-2 outline-none rounded-md"
           name="password"
           type="password"
           placeholder="Password"
+          value="p123"
+          readOnly
         />
         <button
           disabled={navigation.state === "idle" ? false : true}
