@@ -10,9 +10,7 @@ const HostVanDetails = () => {
   return (
     <section className="bg-primary p-4 min-h-screen">
       <div className="w-full sm:w-1/2 md:w-1/3 mx-auto py-6">
-        <Link to=".." relative="path">
-          ← Back to all vans
-        </Link>
+        <Link to="..">← Back to all vans</Link>
         <div className="bg-white p-4 rounded-md my-6">
           <div className="flex gap-4 items-center">
             <img
