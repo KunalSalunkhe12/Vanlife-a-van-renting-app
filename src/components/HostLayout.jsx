@@ -10,31 +10,7 @@ const HostLayout = () => {
           to="."
           end
         >
-          Dashboard
-        </NavLink>
-        <NavLink
-          className={({ isActive }) =>
-            isActive ? "border-b-2 border-black" : null
-          }
-          to="income"
-        >
-          Income
-        </NavLink>
-        <NavLink
-          className={({ isActive }) =>
-            isActive ? "border-b-2 border-black" : null
-          }
-          to="vans"
-        >
-          Vans
-        </NavLink>
-        <NavLink
-          className={({ isActive }) =>
-            isActive ? "border-b-2 border-black" : null
-          }
-          to="reviews"
-        >
-          Reviews
+          Your vans
         </NavLink>
       </div>
       <Outlet />

@@ -5,10 +5,7 @@ import Vans, { loader as vansLoader } from "./pages/Vans/Vans";
 import "../server";
 import VanDetail, { loader as vanDetailsLoader } from "./pages/Vans/VanDetail";
 import Layout from "./components/Layout";
-import Income from "./pages/Host/Income";
-import Reviews from "./pages/Host/Reviews";
 import HostLayout from "./components/HostLayout";
-import Dashboard from "./pages/Host/Dashboard";
 import HostVans, { loader as hostVansLoader } from "./pages/Host/HostVans";
 import HostVanDetails, {
   loader as hostVanDetailsLoader,
@@ -58,20 +55,12 @@ const router = createBrowserRouter([
         children: [
           {
             index: true,
-            element: <Dashboard />,
-          },
-          {
-            path: "income",
-            element: <Income />,
-          },
-          {
-            path: "vans",
             element: <HostVans />,
             loader: hostVansLoader,
             errorElement: <Error />,
           },
           {
-            path: "vans/:id",
+            path: ":id",
             element: <HostVanDetails />,
             loader: hostVanDetailsLoader,
             errorElement: <Error />,
@@ -89,10 +78,6 @@ const router = createBrowserRouter([
                 element: <HostVanPhotos />,
               },
             ],
-          },
-          {
-            path: "reviews",
-            element: <Reviews />,
           },
         ],
       },
